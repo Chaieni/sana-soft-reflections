@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import ChatMessage from '@/components/ChatMessage';
 import NavigationBar from '@/components/NavigationBar';
-import { Mic, Plus } from 'lucide-react';
+import { Mic, Plus, Send } from 'lucide-react';
 
 const Chat = () => {
   const [messages, setMessages] = useState([
@@ -15,15 +15,61 @@ const Chat = () => {
   
   const [inputMessage, setInputMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [isListening, setIsListening] = useState(false);
+  const [voiceFeedback, setVoiceFeedback] = useState('');
+  const [showVoiceFeedback, setShowVoiceFeedback] = useState(false);
   
-  const handleSendMessage = () => {
-    if (inputMessage.trim() === '') return;
+  // Voice recognition setup
+  const startVoiceRecognition = () => {
+    if (!('webkitSpeechRecognition' in window)) {
+      alert('Voice recognition is not supported in your browser');
+      return;
+    }
+    
+    setIsListening(true);
+    setShowVoiceFeedback(true);
+    setVoiceFeedback('Listening...');
+    
+    // @ts-ignore - TypeScript doesn't have types for webkitSpeechRecognition
+    const recognition = new window.webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    
+    recognition.onresult = (event: any) => {
+      const transcript = event.results[0][0].transcript.trim();
+      setInputMessage(transcript);
+      
+      // Add user message with small delay
+      setTimeout(() => {
+        handleSendMessage(transcript);
+        setIsListening(false);
+        setShowVoiceFeedback(false);
+      }, 500);
+    };
+    
+    recognition.onerror = () => {
+      setVoiceFeedback('Sorry, I didn\'t catch that');
+      setTimeout(() => setShowVoiceFeedback(false), 2000);
+      setIsListening(false);
+    };
+    
+    recognition.onend = () => {
+      setIsListening(false);
+    };
+    
+    recognition.start();
+  };
+  
+  const handleSendMessage = (text?: string) => {
+    const messageText = text || inputMessage;
+    if (messageText.trim() === '') return;
     
     // Add user message
     setMessages((prev) => [
       ...prev,
       { 
-        content: inputMessage, 
+        content: messageText, 
         isUser: true,
         timestamp: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
       }
@@ -87,6 +133,24 @@ const Chat = () => {
         </div>
       </div>
       
+      {/* Voice feedback overlay */}
+      {showVoiceFeedback && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-70 text-white px-6 py-4 rounded-xl z-50">
+          <p className="text-center mb-2">{voiceFeedback}</p>
+          <div className="flex justify-center">
+            <div className="w-16 h-1 bg-white rounded-full"></div>
+          </div>
+        </div>
+      )}
+      
+      {/* Voice trigger button */}
+      <div 
+        onClick={startVoiceRecognition}
+        className={`fixed bottom-24 right-4 w-12 h-12 ${isListening ? 'bg-red-500 animate-pulse' : 'bg-mysana-lavender'} rounded-full flex items-center justify-center cursor-pointer shadow-lg z-50 transition-all duration-300`}
+      >
+        <Mic size={20} className="text-white" />
+      </div>
+      
       <div className="fixed bottom-20 left-0 right-0 px-5 pb-4 bg-gradient-to-t from-white via-white to-transparent pt-10">
         <div className="flex items-center space-x-3">
           <Button 
@@ -106,6 +170,7 @@ const Chat = () => {
               className="border-0 focus-visible:ring-0 p-0 shadow-none text-sm flex-1"
             />
             <Button 
+              onClick={startVoiceRecognition}
               variant="ghost" 
               size="icon" 
               className="h-8 w-8 rounded-full text-gray-500 hover:text-primary hover:bg-transparent"
@@ -115,13 +180,10 @@ const Chat = () => {
           </div>
           
           <Button 
-            onClick={handleSendMessage}
+            onClick={() => handleSendMessage()}
             className="rounded-full h-10 w-10 flex-shrink-0 bg-mysana-lavender hover:bg-mysana-lavender/90 text-gray-700"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <Send size={16} />
           </Button>
         </div>
       </div>

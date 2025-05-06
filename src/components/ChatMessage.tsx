@@ -12,26 +12,32 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isUser, timestamp })
   return (
     <div
       className={cn(
-        "flex mb-4",
-        isUser ? "justify-end" : "justify-start"
+        "flex items-start",
+        isUser && "justify-end"
       )}
     >
+      {!isUser && (
+        <div className="w-8 h-8 rounded-full bg-mysana-lavender flex items-center justify-center mr-2 flex-shrink-0">
+          <span className="text-white text-xs font-medium">M</span>
+        </div>
+      )}
+      
       <div
         className={cn(
-          "max-w-[85%] rounded-2xl px-4 py-3 shadow-sm",
-          isUser
-            ? "bg-mysana-peach rounded-tr-none"
-            : "bg-white rounded-tl-none border border-mysana-softGray/30"
+          "p-3 max-w-[75%] shadow-sm",
+          isUser 
+            ? "bg-mysana-lavender rounded-2xl rounded-tr-none text-white" 
+            : "bg-white rounded-2xl rounded-tl-none text-gray-800"
         )}
       >
-        <p className="text-gray-800">{message}</p>
+        <p className={isUser ? "text-white" : "text-gray-800"}>{message}</p>
         {timestamp && (
-          <p className={cn(
-            "text-xs mt-1",
-            isUser ? "text-gray-600" : "text-gray-400"
+          <span className={cn(
+            "text-xs mt-1 block",
+            isUser ? "text-white text-opacity-70" : "text-gray-400"
           )}>
             {timestamp}
-          </p>
+          </span>
         )}
       </div>
     </div>
