@@ -22,7 +22,7 @@ const Journal = () => {
       mood: 'Accomplished',
       moodEmoji: '😊',
       title: 'Project milestone reached',
-      content: 'Finally completed the presentation I've been working on. It took longer than expected, but I'm proud of the results and feel relieved it's done.',
+      content: "Finally completed the presentation I've been working on. It took longer than expected, but I'm proud of the results and feel relieved it's done.",
       color: 'rgb(242, 252, 226)' // mint
     },
     {
@@ -31,7 +31,7 @@ const Journal = () => {
       mood: 'Anxious',
       moodEmoji: '😕',
       title: 'Pre-meeting jitters',
-      content: 'Feeling nervous about the team meeting. Practiced some deep breathing which helped calm my mind. I need to remember that it's okay to speak up.',
+      content: "Feeling nervous about the team meeting. Practiced some deep breathing which helped calm my mind. I need to remember that it's okay to speak up.",
       color: 'rgb(253, 225, 211)' // peach
     },
     {
@@ -40,7 +40,7 @@ const Journal = () => {
       mood: 'Grateful',
       moodEmoji: '🥰',
       title: 'Evening gratitude',
-      content: 'Today I'm grateful for: 1. The supportive message from Mom. 2. The delicious lunch with colleagues. 3. The peaceful evening walk in the park.',
+      content: "Today I'm grateful for: 1. The supportive message from Mom. 2. The delicious lunch with colleagues. 3. The peaceful evening walk in the park.",
       color: 'rgb(254, 247, 205)' // yellow
     }
   ];
