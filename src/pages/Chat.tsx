@@ -105,17 +105,17 @@ const Chat = () => {
   }, [messages]);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-mysana-softGray/20 pb-28">
+    <div className="min-h-screen bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] pb-28">
       <div className="pt-8 px-6">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-medium">MySana</h1>
-          <div className="glass-card px-3 py-1 rounded-full text-xs text-gray-500">
+          <h1 className="text-2xl font-medium text-white">MySana</h1>
+          <div className="bg-white/30 backdrop-blur-md px-3 py-1 rounded-full text-xs text-white">
             Always here for you
           </div>
         </div>
         
-        <div className="mb-4 glass-card p-4 rounded-2xl">
-          <p className="text-sm text-gray-500">
+        <div className="mb-4 bg-white/30 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg">
+          <p className="text-sm text-white">
             I'm here to listen and support you. Feel free to share what's on your mind.
           </p>
         </div>
@@ -146,34 +146,34 @@ const Chat = () => {
       {/* Voice trigger button */}
       <div 
         onClick={startVoiceRecognition}
-        className={`fixed bottom-24 right-4 w-12 h-12 ${isListening ? 'bg-red-500 animate-pulse' : 'bg-mysana-lavender'} rounded-full flex items-center justify-center cursor-pointer shadow-lg z-50 transition-all duration-300`}
+        className={`fixed bottom-24 right-4 w-12 h-12 ${isListening ? 'bg-red-500 animate-pulse' : 'bg-white/30 backdrop-blur-md'} rounded-full flex items-center justify-center cursor-pointer shadow-lg z-50 transition-all duration-300`}
       >
         <Mic size={20} className="text-white" />
       </div>
       
-      <div className="fixed bottom-20 left-0 right-0 px-5 pb-4 bg-gradient-to-t from-white via-white to-transparent pt-10">
+      <div className="fixed bottom-20 left-0 right-0 px-5 pb-4 bg-gradient-to-t from-[#F9E3DD] via-[#F9E3DD] to-transparent pt-10">
         <div className="flex items-center space-x-3">
           <Button 
             variant="outline" 
             size="icon" 
-            className="rounded-full h-10 w-10 flex-shrink-0 border-gray-200"
+            className="rounded-full h-10 w-10 flex-shrink-0 border-white/30 bg-white/30 backdrop-blur-md"
           >
-            <Plus size={20} className="text-gray-500" />
+            <Plus size={20} className="text-white" />
           </Button>
           
-          <div className="flex-1 flex items-center bg-white rounded-full border border-gray-200 shadow-sm px-4 py-2">
+          <div className="flex-1 flex items-center bg-white/30 backdrop-blur-md rounded-full border border-white/20 shadow-sm px-4 py-2">
             <Input 
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
               placeholder="Message MySana..."
-              className="border-0 focus-visible:ring-0 p-0 shadow-none text-sm flex-1"
+              className="border-0 focus-visible:ring-0 p-0 shadow-none text-sm flex-1 bg-transparent text-white placeholder:text-white/70"
             />
             <Button 
               onClick={startVoiceRecognition}
               variant="ghost" 
               size="icon" 
-              className="h-8 w-8 rounded-full text-gray-500 hover:text-primary hover:bg-transparent"
+              className="h-8 w-8 rounded-full text-white hover:text-white/80 hover:bg-transparent"
             >
               <Mic size={18} />
             </Button>
@@ -181,7 +181,7 @@ const Chat = () => {
           
           <Button 
             onClick={() => handleSendMessage()}
-            className="rounded-full h-10 w-10 flex-shrink-0 bg-mysana-lavender hover:bg-mysana-lavender/90 text-gray-700"
+            className="rounded-full h-10 w-10 flex-shrink-0 bg-white/30 backdrop-blur-md hover:bg-white/40 text-white"
           >
             <Send size={16} />
           </Button>
