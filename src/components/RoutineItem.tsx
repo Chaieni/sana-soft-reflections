@@ -17,14 +17,14 @@ const RoutineItem: React.FC<RoutineItemProps> = ({
   title,
   description,
   completed = false,
-  colorClass = 'bg-mysana-lavender',
+  colorClass = 'bg-white/30',
   onToggle
 }) => {
   return (
     <div 
       className={cn(
         "flex items-center gap-4 p-4 rounded-2xl transition-all",
-        "glass-card",
+        "bg-white/30 backdrop-blur-md border border-white/20 shadow-lg",
         completed && "opacity-70"
       )}
     >
@@ -37,12 +37,12 @@ const RoutineItem: React.FC<RoutineItemProps> = ({
       
       <div className="flex-1">
         <h3 className={cn(
-          "font-medium",
-          completed && "line-through text-gray-400"
+          "font-medium text-white",
+          completed && "line-through text-white/50"
         )}>
           {title}
         </h3>
-        <p className="text-sm text-gray-500">{description}</p>
+        <p className="text-sm text-white/70">{description}</p>
       </div>
       
       <button
@@ -50,8 +50,8 @@ const RoutineItem: React.FC<RoutineItemProps> = ({
         className={cn(
           "w-6 h-6 rounded-full border transition-all flex items-center justify-center",
           completed 
-            ? "bg-mysana-mint border-mysana-mint" 
-            : "border-gray-300"
+            ? "bg-white/50 border-white/50" 
+            : "border-white/50"
         )}
       >
         {completed && <Check size={14} className="text-white" />}

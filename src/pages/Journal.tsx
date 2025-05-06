@@ -13,7 +13,7 @@ const Journal = () => {
       mood: 'Peaceful',
       moodEmoji: '😌',
       title: 'Afternoon reflection',
-      content: 'I took a 15-minute break to sit in the garden today. The sound of birds and the warm sunshine helped me feel grounded and present.',
+      content: "I took a 15-minute break to sit in the garden today. The sound of birds and the warm sunshine helped me feel grounded and present.",
       color: 'rgb(229, 222, 255)' // lavender
     },
     {
@@ -46,18 +46,18 @@ const Journal = () => {
   ];
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-mysana-softGray/20 pb-24">
+    <div className="min-h-screen bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] pb-24">
       <div className="pt-12 px-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-medium">Reflection Journal</h1>
+          <h1 className="text-2xl font-medium text-white">Reflection Journal</h1>
           <Button 
-            className="rounded-full w-10 h-10 bg-mysana-lavender hover:bg-mysana-lavender/90 text-gray-800"
+            className="rounded-full w-10 h-10 bg-white/30 hover:bg-white/40 backdrop-blur-md text-white border border-white/20"
           >
             <Plus size={18} />
           </Button>
         </div>
         
-        <p className="text-gray-500 mb-6">
+        <p className="text-white/80 mb-6">
           Your emotional journey and moments of reflection.
         </p>
         

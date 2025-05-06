@@ -10,11 +10,11 @@ type Mood = {
 };
 
 const moods: Mood[] = [
-  { emoji: '😊', label: 'Happy', color: 'bg-mysana-yellow', glowColor: 'bg-mysana-yellow/60' },
-  { emoji: '😌', label: 'Calm', color: 'bg-mysana-mint', glowColor: 'bg-mysana-mint/60' },
-  { emoji: '😐', label: 'Neutral', color: 'bg-mysana-softGray', glowColor: 'bg-mysana-softGray/60' },
-  { emoji: '😕', label: 'Anxious', color: 'bg-mysana-softBlue', glowColor: 'bg-mysana-softBlue/60' },
-  { emoji: '😢', label: 'Sad', color: 'bg-mysana-lavender', glowColor: 'bg-mysana-lavender/60' },
+  { emoji: '😊', label: 'Happy', color: 'bg-white/40', glowColor: 'bg-white/20' },
+  { emoji: '😌', label: 'Calm', color: 'bg-white/40', glowColor: 'bg-white/20' },
+  { emoji: '😐', label: 'Neutral', color: 'bg-white/40', glowColor: 'bg-white/20' },
+  { emoji: '😕', label: 'Anxious', color: 'bg-white/40', glowColor: 'bg-white/20' },
+  { emoji: '😢', label: 'Sad', color: 'bg-white/40', glowColor: 'bg-white/20' },
 ];
 
 interface MoodSelectorProps {
@@ -36,16 +36,16 @@ const MoodSelector: React.FC<MoodSelectorProps> = ({ onMoodSelect, selectedMood 
         >
           <div 
             className={cn(
-              "w-16 h-16 flex items-center justify-center rounded-full text-3xl shadow-md",
+              "w-16 h-16 flex items-center justify-center rounded-full text-3xl shadow-md backdrop-blur-md",
               "relative",
               mood.color,
               selectedMood === mood.label && "ring-4 ring-white/50"
             )}
           >
-            <div className="absolute inset-0 rounded-full blur-md opacity-50" style={{ backgroundColor: mood.color }}></div>
+            <div className="absolute inset-0 rounded-full blur-md opacity-50 bg-white/10"></div>
             <span className="z-10">{mood.emoji}</span>
           </div>
-          <span className="mt-2 text-sm font-medium text-gray-600">{mood.label}</span>
+          <span className="mt-2 text-sm font-medium text-white">{mood.label}</span>
         </div>
       ))}
     </div>
