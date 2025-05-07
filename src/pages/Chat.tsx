@@ -108,14 +108,21 @@ const Chat = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] pb-28">
       <div className="pt-8 px-6">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-medium text-white">MySana</h1>
-          <div className="bg-white/30 backdrop-blur-md px-3 py-1 rounded-full text-xs text-white">
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/b89c8631-d285-4346-b515-6f58b746f7cf.png" 
+              alt="MySana" 
+              className="w-8 h-8 mr-2" 
+            />
+            <h1 className="text-2xl font-medium text-[#221F26] drop-shadow-sm">MySana</h1>
+          </div>
+          <div className="bg-white/30 backdrop-blur-md px-3 py-1 rounded-full text-xs text-[#221F26] font-medium">
             Always here for you
           </div>
         </div>
         
         <div className="mb-4 bg-white/30 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg">
-          <p className="text-sm text-white">
+          <p className="text-sm text-[#221F26] font-medium">
             I'm here to listen and support you. Feel free to share what's on your mind.
           </p>
         </div>
@@ -158,7 +165,7 @@ const Chat = () => {
             size="icon" 
             className="rounded-full h-10 w-10 flex-shrink-0 border-white/30 bg-white/30 backdrop-blur-md"
           >
-            <Plus size={20} className="text-white" />
+            <Plus size={20} className="text-[#221F26]" />
           </Button>
           
           <div className="flex-1 flex items-center bg-white/30 backdrop-blur-md rounded-full border border-white/20 shadow-sm px-4 py-2">
@@ -167,13 +174,13 @@ const Chat = () => {
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
               placeholder="Message MySana..."
-              className="border-0 focus-visible:ring-0 p-0 shadow-none text-sm flex-1 bg-transparent text-white placeholder:text-white/70"
+              className="border-0 focus-visible:ring-0 p-0 shadow-none text-sm flex-1 bg-transparent text-[#221F26] font-medium placeholder:text-[#221F26]/70"
             />
             <Button 
               onClick={startVoiceRecognition}
               variant="ghost" 
               size="icon" 
-              className="h-8 w-8 rounded-full text-white hover:text-white/80 hover:bg-transparent"
+              className="h-8 w-8 rounded-full text-[#221F26] hover:text-[#221F26]/80 hover:bg-transparent"
             >
               <Mic size={18} />
             </Button>
@@ -181,7 +188,7 @@ const Chat = () => {
           
           <Button 
             onClick={() => handleSendMessage()}
-            className="rounded-full h-10 w-10 flex-shrink-0 bg-white/30 backdrop-blur-md hover:bg-white/40 text-white"
+            className="rounded-full h-10 w-10 flex-shrink-0 bg-white/30 backdrop-blur-md hover:bg-white/40 text-[#221F26]"
           >
             <Send size={16} />
           </Button>

@@ -18,7 +18,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isUser, timestamp })
     >
       {!isUser && (
         <div className="w-8 h-8 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center mr-2 flex-shrink-0">
-          <span className="text-white text-xs font-medium">M</span>
+          <img 
+            src="/lovable-uploads/b89c8631-d285-4346-b515-6f58b746f7cf.png" 
+            alt="MySana" 
+            className="w-5 h-5"
+          />
         </div>
       )}
       
@@ -30,11 +34,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isUser, timestamp })
             : "bg-white/30 backdrop-blur-md rounded-2xl rounded-tl-none text-white border border-white/20"
         )}
       >
-        <p className="text-white">{message}</p>
+        <p className="text-white font-medium text-shadow-sm">{message}</p>
         {timestamp && (
           <span className={cn(
             "text-xs mt-1 block",
-            isUser ? "text-white text-opacity-70" : "text-white text-opacity-70"
+            isUser ? "text-white text-opacity-80" : "text-white text-opacity-80"
           )}>
             {timestamp}
           </span>

@@ -24,20 +24,18 @@ const Welcome = () => {
           <div className="absolute inset-2 bg-white/30 backdrop-blur-md rounded-full"></div>
           <div className="absolute inset-4 bg-white/40 backdrop-blur-md rounded-full"></div>
           <div className="absolute inset-6 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center">
-            <div className="w-12 h-12 bg-white/60 rounded-full flex items-center justify-center">
-              <span className="text-white text-2xl">🌸</span>
-            </div>
+            <img src="/lovable-uploads/b89c8631-d285-4346-b515-6f58b746f7cf.png" alt="MySana" className="w-16 h-16" />
           </div>
         </div>
-        <h1 className="text-white text-3xl font-medium mb-4 text-center leading-tight">
+        <h1 className="text-[#221F26] text-3xl font-medium mb-4 text-center leading-tight drop-shadow-sm">
           Welcome to MySana<br/>Your wellness companion
         </h1>
-        <p className="text-white/80 text-center mb-8">
+        <p className="text-[#403E43] text-center mb-8 font-medium">
           I'm here to support your emotional wellbeing
         </p>
         <Button
           onClick={() => navigate('/home')}
-          className="bg-white/30 backdrop-blur-md text-white px-8 py-3 rounded-full text-lg shadow-lg"
+          className="bg-white/30 backdrop-blur-md text-[#221F26] font-medium px-8 py-3 rounded-full text-lg shadow-lg"
         >
           Get Started
         </Button>
