@@ -37,12 +37,12 @@ const RoutineItem: React.FC<RoutineItemProps> = ({
       
       <div className="flex-1">
         <h3 className={cn(
-          "font-medium text-white",
-          completed && "line-through text-white/50"
+          "font-medium text-[#3E3F44]",
+          completed && "line-through text-[#3E3F44]/50"
         )}>
           {title}
         </h3>
-        <p className="text-sm text-white/70">{description}</p>
+        <p className="text-sm text-[#3E3F44]/70">{description}</p>
       </div>
       
       <button
@@ -54,7 +54,7 @@ const RoutineItem: React.FC<RoutineItemProps> = ({
             : "border-white/50"
         )}
       >
-        {completed && <Check size={14} className="text-white" />}
+        {completed && <Check size={14} className="text-[#3E3F44]" />}
       </button>
     </div>
   );

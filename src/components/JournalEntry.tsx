@@ -26,12 +26,12 @@ const JournalEntry: React.FC<JournalEntryProps> = ({
       </div>
       
       <div className="mb-4">
-        <p className="text-xs text-white/70 mb-1">{date}</p>
-        <h3 className="font-medium text-lg text-white">{title}</h3>
-        <p className="text-sm text-white/80">{mood}</p>
+        <p className="text-xs text-[#3E3F44]/70 mb-1">{date}</p>
+        <h3 className="font-medium text-lg text-[#3E3F44]">{title}</h3>
+        <p className="text-sm text-[#3E3F44]/80">{mood}</p>
       </div>
       
-      <p className="text-white/90 text-sm">
+      <p className="text-[#3E3F44]/90 text-sm">
         {content}
       </p>
     </div>

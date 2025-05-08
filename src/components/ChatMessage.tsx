@@ -30,15 +30,15 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isUser, timestamp })
         className={cn(
           "p-3 max-w-[75%] shadow-sm",
           isUser 
-            ? "bg-white/30 backdrop-blur-md rounded-2xl rounded-tr-none text-white border border-white/20" 
-            : "bg-white/30 backdrop-blur-md rounded-2xl rounded-tl-none text-white border border-white/20"
+            ? "bg-white/30 backdrop-blur-md rounded-2xl rounded-tr-none text-[#3E3F44] border border-white/20" 
+            : "bg-white/30 backdrop-blur-md rounded-2xl rounded-tl-none text-[#3E3F44] border border-white/20"
         )}
       >
-        <p className="text-white font-medium text-shadow-sm">{message}</p>
+        <p className="text-[#3E3F44] font-medium text-shadow-sm">{message}</p>
         {timestamp && (
           <span className={cn(
             "text-xs mt-1 block",
-            isUser ? "text-white text-opacity-80" : "text-white text-opacity-80"
+            isUser ? "text-[#3E3F44] text-opacity-80" : "text-[#3E3F44] text-opacity-80"
           )}>
             {timestamp}
           </span>

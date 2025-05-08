@@ -45,7 +45,7 @@ const MoodSelector: React.FC<MoodSelectorProps> = ({ onMoodSelect, selectedMood 
             <div className="absolute inset-0 rounded-full blur-md opacity-50 bg-white/10"></div>
             <span className="z-10">{mood.emoji}</span>
           </div>
-          <span className="mt-2 text-sm font-medium text-white">{mood.label}</span>
+          <span className="mt-2 text-sm font-medium text-[#3E3F44]">{mood.label}</span>
         </div>
       ))}
     </div>

@@ -27,7 +27,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ activeScreen }) => {
               "flex flex-col items-center p-2 transition-all",
               activeScreen === item.label.toLowerCase()
                 ? "text-primary"
-                : "text-gray-400"
+                : "text-[#3E3F44]/70"
             )}
           >
             <div className="mb-1">{item.icon}</div>
