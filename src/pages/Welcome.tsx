@@ -2,51 +2,69 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { Mic } from 'lucide-react';
+import { Home, LayoutGrid, MessageCircle, User, Mic, X } from 'lucide-react';
 
 const Welcome = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="h-full min-h-screen w-full bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] flex flex-col items-center justify-between px-6 py-12">
-      <div className="w-full flex justify-between">
-        <Button variant="ghost" className="bg-white/30 backdrop-blur-md text-white py-2 px-6 rounded-full text-sm shadow-lg">
+    <div className="h-full min-h-screen w-full bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] flex flex-col items-center px-6 py-12">
+      {/* Quick action buttons */}
+      <div className="w-full flex justify-between mb-12">
+        <Button variant="ghost" className="bg-white/30 backdrop-blur-md text-[#3E3F44] py-2 px-6 rounded-full text-sm shadow-lg flex items-center gap-2">
           Help with job
+          <X size={16} />
         </Button>
-        <Button variant="ghost" className="bg-white/30 backdrop-blur-md text-white py-2 px-6 rounded-full text-sm shadow-lg">
+        <Button variant="ghost" className="bg-white/30 backdrop-blur-md text-[#3E3F44] py-2 px-6 rounded-full text-sm shadow-lg flex items-center gap-2">
           Breathing exercise
+          <X size={16} />
         </Button>
       </div>
       
-      <div className="flex flex-col items-center">
-        <div className="relative w-32 h-32 mb-8">
-          <div className="absolute inset-0 bg-white/20 backdrop-blur-md rounded-full"></div>
-          <div className="absolute inset-2 bg-white/30 backdrop-blur-md rounded-full"></div>
-          <div className="absolute inset-4 bg-white/40 backdrop-blur-md rounded-full"></div>
-          <div className="absolute inset-6 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center">
-            <img src="/lovable-uploads/b89c8631-d285-4346-b515-6f58b746f7cf.png" alt="MySana" className="w-16 h-16" />
-          </div>
+      {/* Main content */}
+      <div className="flex flex-col items-center text-center max-w-md mx-auto">
+        <h2 className="text-[#3E3F44] text-xl mt-4 mb-1">Hi, Jess</h2>
+        <h1 className="text-[#3E3F44] text-2xl font-medium mb-8">A Gentle Connection to Your Inner World</h1>
+        
+        {/* Animated Logo/Icon */}
+        <div className="relative w-64 h-64 mb-16 animate-float">
+          <img 
+            src="/lovable-uploads/2c3129cc-39db-4ed1-872b-b9f58e12264d.png" 
+            alt="MySana" 
+            className="w-full h-full object-contain"
+          />
         </div>
-        <h1 className="text-[#221F26] text-3xl font-medium mb-4 text-center leading-tight drop-shadow-sm">
-          Welcome to MySana<br/>Your wellness companion
-        </h1>
-        <p className="text-[#403E43] text-center mb-8 font-medium">
-          I'm here to support your emotional wellbeing
-        </p>
-        <Button
-          onClick={() => navigate('/home')}
-          className="bg-white/30 backdrop-blur-md text-[#221F26] font-medium px-8 py-3 rounded-full text-lg shadow-lg"
-        >
-          Get Started
-        </Button>
+        
+        {/* Message */}
+        <div className="text-center mb-12">
+          <p className="text-[#3E3F44] text-xl font-medium leading-relaxed">
+            Let's celebrate the small wins.
+            <br />
+            Want to check your job search progress?
+          </p>
+        </div>
       </div>
       
       {/* Voice trigger button */}
-      <div 
-        onClick={() => navigate('/chat')}
-        className="fixed bottom-24 right-6 w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg z-50 animate-pulse"
-      >
-        <Mic size={24} className="text-white" />
+      <div className="fixed bottom-24 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg z-50">
+        <Mic size={24} className="text-[#3E3F44]" />
+      </div>
+      
+      {/* Navigation bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-[#2C2C2E]/70 backdrop-blur-md h-20 flex justify-around items-center px-12">
+        <button className="text-[#F9E3DD] flex flex-col items-center">
+          <Home size={24} />
+        </button>
+        <button className="text-[#F9E3DD] flex flex-col items-center">
+          <LayoutGrid size={24} />
+        </button>
+        <div className="w-12"></div> {/* Spacer for mic button */}
+        <button className="text-[#F9E3DD] flex flex-col items-center">
+          <MessageCircle size={24} />
+        </button>
+        <button className="text-[#F9E3DD] flex flex-col items-center">
+          <User size={24} />
+        </button>
       </div>
     </div>
   );
