@@ -29,7 +29,7 @@ const Welcome = () => {
         {/* Flower Image */}
         <div className="relative w-64 h-64 mb-8">
           <img 
-            src="/lovable-uploads/2c3129cc-39db-4ed1-872b-b9f58e12264d.png" 
+            src="/lovable-uploads/09513a48-2ea8-4dd8-9932-e8927a3eb98a.png" 
             alt="Sanv" 
             className="w-full h-full object-contain"
           />
