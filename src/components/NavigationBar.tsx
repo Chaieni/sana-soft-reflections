@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { MessageCircle, Heart, Book, Calendar } from 'lucide-react';
+import { Home, MessageCircle, Calendar, Book } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface NavigationBarProps {
@@ -10,14 +10,14 @@ interface NavigationBarProps {
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ activeScreen }) => {
   const navItems = [
-    { icon: <Heart size={24} />, label: 'Home', path: '/home' },
+    { icon: <Home size={24} />, label: 'Home', path: '/home' },
     { icon: <MessageCircle size={24} />, label: 'Chat', path: '/chat' },
     { icon: <Calendar size={24} />, label: 'Routines', path: '/routines' },
     { icon: <Book size={24} />, label: 'Journal', path: '/journal' },
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 soft-shadow rounded-t-3xl">
+    <nav className="fixed bottom-0 left-0 right-0 bg-[#F1F0FB]/90 backdrop-blur-md border-t border-[#E5E5E6] soft-shadow rounded-t-3xl">
       <div className="flex justify-around items-center py-3 px-6">
         {navItems.map((item) => (
           <Link

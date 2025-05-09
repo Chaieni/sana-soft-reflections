@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import MoodSelector from '@/components/MoodSelector';
 import NavigationBar from '@/components/NavigationBar';
 import { useNavigate } from 'react-router-dom';
-import { MessageCircle, Sparkles, CalendarDays, Book } from 'lucide-react';
+import { MessageCircle, CalendarDays, Book } from 'lucide-react';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Home = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] pb-20">
+    <div className="min-h-screen bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] pb-24">
       <div className="pt-12 px-6">
         <h1 className="text-2xl font-medium mb-1 text-[#3E3F44]">{getGreeting()}, Emma</h1>
         <p className="text-[#3E3F44]/80">How are you feeling today?</p>

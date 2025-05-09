@@ -2,13 +2,14 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { Home, LayoutGrid, MessageCircle, User, Mic, X } from 'lucide-react';
+import { X, Mic } from 'lucide-react';
+import NavigationBar from '@/components/NavigationBar';
 
 const Welcome = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="h-full min-h-screen w-full bg-gradient-to-b from-[#f3d1d1] via-[#e5d4ef] to-[#fddbcf] flex flex-col items-center px-6 py-12">
+    <div className="h-full min-h-screen w-full bg-gradient-to-b from-[#f3d1d1] via-[#e5d4ef] to-[#fddbcf] flex flex-col items-center px-6 py-12 pb-24">
       {/* Quick action buttons */}
       <div className="w-full flex justify-between mb-8">
         <Button variant="ghost" className="bg-white/30 backdrop-blur-md text-[#3E3F44] py-2 px-6 rounded-full text-sm shadow-lg flex items-center gap-2">
@@ -59,21 +60,7 @@ const Welcome = () => {
       </div>
       
       {/* Navigation bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#2C2C2E]/70 backdrop-blur-md h-20 flex justify-around items-center px-12">
-        <button className="text-[#F9E3DD] flex flex-col items-center">
-          <Home size={24} />
-        </button>
-        <button className="text-[#F9E3DD] flex flex-col items-center">
-          <LayoutGrid size={24} />
-        </button>
-        <div className="w-12"></div> {/* Spacer for mic button */}
-        <button className="text-[#F9E3DD] flex flex-col items-center">
-          <MessageCircle size={24} />
-        </button>
-        <button className="text-[#F9E3DD] flex flex-col items-center">
-          <User size={24} />
-        </button>
-      </div>
+      <NavigationBar activeScreen="" />
     </div>
   );
 };
