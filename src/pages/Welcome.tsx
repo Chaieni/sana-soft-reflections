@@ -26,7 +26,7 @@ const Welcome = () => {
         <h2 className="text-[#3E3F44] text-xl mt-4 mb-1">Hi, Jess</h2>
         <h1 className="text-[#3E3F44] text-2xl font-medium mb-8">A Gentle Connection to Your Inner World</h1>
         
-        {/* Animated Logo/Icon */}
+        {/* Flower Image */}
         <div className="relative w-64 h-64 mb-8">
           <img 
             src="/lovable-uploads/2c3129cc-39db-4ed1-872b-b9f58e12264d.png" 
