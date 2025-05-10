@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -155,7 +154,7 @@ const Chat = () => {
         onClick={startVoiceRecognition}
         className={`fixed bottom-24 right-4 w-12 h-12 ${isListening ? 'bg-red-500 animate-pulse' : 'bg-white/30 backdrop-blur-md'} rounded-full flex items-center justify-center cursor-pointer shadow-lg z-50 transition-all duration-300`}
       >
-        <Mic size={20} className="text-white" />
+        <Mic size={20} className={`${isListening ? 'text-white' : 'text-[#221F26]'}`} />
       </div>
       
       <div className="fixed bottom-20 left-0 right-0 px-5 pb-4 bg-gradient-to-t from-[#F9E3DD] via-[#F9E3DD] to-transparent pt-10">

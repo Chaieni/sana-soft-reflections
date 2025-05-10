@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import NavigationBar from '@/components/NavigationBar';
 import RoutineItem from '@/components/RoutineItem';
@@ -22,13 +21,13 @@ const Routines = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] pb-20">
       <div className="pt-12 px-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-medium text-white">Your Routines</h1>
-          <div className="bg-white/30 backdrop-blur-md px-3 py-1 rounded-full text-xs text-white border border-white/20">
+          <h1 className="text-2xl font-medium text-[#3E3F44]">Your Routines</h1>
+          <div className="bg-white/30 backdrop-blur-md px-3 py-1 rounded-full text-xs text-[#3E3F44] border border-white/20">
             {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
           </div>
         </div>
         
-        <p className="text-white/80 mb-6">
+        <p className="text-[#3E3F44]/80 mb-6">
           Gentle reminders to support your wellbeing today.
         </p>
         
@@ -47,7 +46,7 @@ const Routines = () => {
         </div>
         
         <div className="bg-white/30 backdrop-blur-md p-4 rounded-2xl mt-8 border border-white/20">
-          <p className="text-center text-sm text-white/80">
+          <p className="text-center text-sm text-[#3E3F44]/80">
             "Small habits compound into remarkable results."
           </p>
         </div>

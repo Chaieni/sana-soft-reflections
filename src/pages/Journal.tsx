@@ -1,4 +1,3 @@
-
 import React from 'react';
 import NavigationBar from '@/components/NavigationBar';
 import JournalEntry from '@/components/JournalEntry';
@@ -58,7 +57,7 @@ const Journal = () => {
             <h1 className="text-2xl font-medium text-[#221F26] drop-shadow-sm">Reflection Journal</h1>
           </div>
           <Button 
-            className="rounded-full w-10 h-10 bg-white/30 hover:bg-white/40 backdrop-blur-md text-white border border-white/20"
+            className="rounded-full w-10 h-10 bg-white/30 hover:bg-white/40 backdrop-blur-md text-[#221F26] border border-white/20"
           >
             <Plus size={18} />
           </Button>
