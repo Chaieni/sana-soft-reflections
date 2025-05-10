@@ -52,9 +52,9 @@ const Journal = () => {
             <img 
               src="/lovable-uploads/b89c8631-d285-4346-b515-6f58b746f7cf.png" 
               alt="MySana" 
-              className="w-8 h-8 mr-2" 
+              className="w-10 h-10 mr-3" 
             />
-            <h1 className="text-2xl font-medium text-[#221F26] drop-shadow-sm">Reflection Journal</h1>
+            <h1 className="text-2xl font-medium text-[#221F26]">Reflection Journal</h1>
           </div>
           <Button 
             className="rounded-full w-10 h-10 bg-white/30 hover:bg-white/40 backdrop-blur-md text-[#221F26] border border-white/20"
@@ -67,7 +67,7 @@ const Journal = () => {
           Your emotional journey and moments of reflection.
         </p>
         
-        <div className="space-y-1">
+        <div className="space-y-6">
           {journalEntries.map((entry) => (
             <JournalEntry
               key={entry.id}

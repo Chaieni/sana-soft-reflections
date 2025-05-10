@@ -21,7 +21,14 @@ const Routines = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#E6D5E6] to-[#F9E3DD] pb-20">
       <div className="pt-12 px-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-medium text-[#3E3F44]">Your Routines</h1>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/b89c8631-d285-4346-b515-6f58b746f7cf.png" 
+              alt="MySana" 
+              className="w-10 h-10 mr-3" 
+            />
+            <h1 className="text-2xl font-medium text-[#3E3F44]">Your Routines</h1>
+          </div>
           <div className="bg-white/30 backdrop-blur-md px-3 py-1 rounded-full text-xs text-[#3E3F44] border border-white/20">
             {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
           </div>
