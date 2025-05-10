@@ -85,7 +85,6 @@ const Chat = () => {
         "I'm holding space for whatever you need to express. Would a gentle breathing exercise help center you right now?",
         "Your feelings matter so much to me. Can you tell me more about what's behind those emotions?"
       ];
-      
       const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
       
       setMessages((prev) => [
@@ -192,4 +191,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default Chat; 
