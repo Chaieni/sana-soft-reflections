@@ -27,5 +27,8 @@
         }
       ]
     }
-  ]
+  ],
+  "env": {
+    "VITE_APP_ID": "ddc87ceb-e170-4718-a85a-cc67a340a6aa"
+  }
 } 
