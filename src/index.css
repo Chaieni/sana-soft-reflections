@@ -16,6 +16,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
+    /* Accessible text colors - Added for WCAG 2.1 AA compliance */
+    --text-primary: 225 6% 25%; /* #3E3F44 with sufficient contrast */
+    --text-secondary: 220 5% 40%; /* For secondary text that still meets contrast requirements */
+    --text-muted: 220 5% 45%; /* For muted text with 4.5:1 minimum contrast ratio */
+
     --primary: 260 100% 60%;
     --primary-foreground: 210 40% 98%;
 
@@ -54,7 +59,7 @@
   }
 
   body {
-    @apply bg-background text-[#3E3F44] font-sans;
+    @apply bg-background text-text-primary font-sans;
   }
 }
 
@@ -104,6 +109,14 @@
   }
   
   .text-default {
-    @apply text-[#3E3F44];
+    @apply text-text-primary;
+  }
+  
+  .text-secondary {
+    @apply text-text-secondary;
+  }
+  
+  .text-muted {
+    @apply text-text-muted;
   }
 }

@@ -20,7 +20,7 @@ const JournalEntry: React.FC<JournalEntryProps> = ({
   colorClass = 'bg-mysana-lavender'
 }) => {
   return (
-    <div className="bg-white/30 backdrop-blur-md p-5 mb-6 rounded-2xl border border-white/20 shadow-lg relative">
+    <div className="bg-white/30 backdrop-blur-md p-5 rounded-2xl border border-white/20 shadow-lg relative">
       <div className="absolute top-5 right-5 w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-sm" style={{ backgroundColor: colorClass }}>
         {moodEmoji}
       </div>

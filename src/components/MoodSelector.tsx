@@ -24,14 +24,21 @@ interface MoodSelectorProps {
 
 const MoodSelector: React.FC<MoodSelectorProps> = ({ onMoodSelect, selectedMood }) => {
   return (
-    <div className="flex flex-wrap justify-center gap-4 w-full">
+    <div 
+      className="flex flex-wrap justify-center gap-4 w-full" 
+      role="group" 
+      aria-label="Mood selection"
+    >
       {moods.map((mood) => (
-        <div
+        <button
           key={mood.label}
           onClick={() => onMoodSelect?.(mood)}
+          aria-pressed={selectedMood === mood.label}
+          aria-label={`Select mood: ${mood.label}`}
           className={cn(
-            "flex flex-col items-center transition-all duration-300 cursor-pointer",
-            "transform hover:scale-110"
+            "flex flex-col items-center transition-all duration-300",
+            "transform hover:scale-110 bg-transparent border-none",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
           )}
         >
           <div 
@@ -43,10 +50,10 @@ const MoodSelector: React.FC<MoodSelectorProps> = ({ onMoodSelect, selectedMood 
             )}
           >
             <div className="absolute inset-0 rounded-full blur-md opacity-50 bg-white/10"></div>
-            <span className="z-10">{mood.emoji}</span>
+            <span className="z-10" aria-hidden="true">{mood.emoji}</span>
           </div>
           <span className="mt-2 text-sm font-medium text-[#3E3F44]">{mood.label}</span>
-        </div>
+        </button>
       ))}
     </div>
   );
